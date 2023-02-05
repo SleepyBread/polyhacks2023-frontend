@@ -4,15 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from '@auth0/auth0-angular';
 
 import { AppComponent } from './app.component';
-import { AuthButtonComponent } from "../auth/auth.component";
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { LoginButtonComponent } from 'src/auth/login/login-button.component';
+import { LogoutButtonComponent } from 'src/auth/logout/logout-button.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
         AppComponent,
-        AuthButtonComponent,
+        LoginButtonComponent,
+        LogoutButtonComponent,
+        HomeComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -29,6 +32,7 @@ import { AppRoutingModule } from './app-routing.module';
                 redirect_uri: window.location.origin
             }
         }),
+        NgbModule,
     ]
 })
 export class AppModule { }
